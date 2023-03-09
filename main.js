@@ -8,13 +8,17 @@ import image from './PhotoRoom.png';
 
 import { user } from './data.json';
 
+import suma from './suma.ts';
+
 const modules = import.meta.glob( './modules/*.js' );
 console.log(modules);
 for (const path in modules) {
   modules[path]().then((module) => {
     module.load();
   });
-}
+};
+
+console.log(`Suma 2 + 3 = ${suma(2, 3)}`);
 
 document.querySelector('#app').innerHTML = `
   <div>
